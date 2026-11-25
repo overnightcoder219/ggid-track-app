@@ -3,11 +3,11 @@
     {
       "tag_name": "v1.0.1",
       "published_at": "2026-11-25T09:20:46Z",
-      "body": "## GGID Track 1.0.1\n\n- Memperbaiki aplikasi yang langsung tertutup saat dibuka di versi 1.0.0.\n- Ukuran unduhan jauh lebih kecil: sekitar 37 MB (sebelumnya 154 MB).\n\nPasang di atas versi sebelumnya. Masuk dengan akun dari penyedia GPS Anda.\n",
+      "body": "## GGID Track 1.0.1\n\n- Memperbaiki aplikasi yang langsung tertutup saat dibuka di versi 1.0.0.\n- Ukuran unduhan jauh lebih kecil: sekitar 46 MB (sebelumnya 154 MB).\n\nPasang di atas versi sebelumnya. Masuk dengan akun dari penyedia GPS Anda.\n\n",
       "assets": [
         {
           "name": "GGID-Track-1.0.1.apk",
-          "download_count": 0
+          "download_count": 1
         }
       ]
     },
