@@ -1,7 +1,7 @@
 {
-  "versionName": "1.0.1",
-  "versionCode": 2,
-  "apk": "https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.1/GGID-Track-1.0.1.apk",
-  "sha256": "998c7235b1284576370cc4a0d306b56154bd465d102cd7f54e4d079d15ffafcb",
-  "notes": "• Memperbaiki aplikasi yang langsung tertutup saat dibuka di versi 1.0.0.\n• Ukuran unduhan jauh lebih kecil: sekitar 46 MB (sebelumnya 154 MB).\n\nPasang di atas versi sebelumnya. Masuk dengan akun dari penyedia GPS Anda."
+  "versionName": "1.0.2",
+  "versionCode": 1000002,
+  "apk": "https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.2/GGID-Track-1.0.2.apk",
+  "sha256": "191ad0559cbf94706ace23ce5ffcd60a0fe1afc944ae25fadc4e5d5dff5ccc6a",
+  "notes": "• Tampilan baru dengan warna GGID: header dan menu bawah berwarna biru tua, dan mode terang tidak lagi serba putih sehingga lebih nyaman di mata.\n• Memperbaiki tulisan yang terpotong di beberapa HP dan tablet Xiaomi, misalnya tombol \"Camera\", \"Geo Fence\", dan satuan km/h.\n\nPasang di atas versi sebelumnya; data masuk tetap tersimpan."
 }
