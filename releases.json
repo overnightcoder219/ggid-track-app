@@ -1,13 +1,24 @@
 {
   "releases": [
     {
+      "tag_name": "v1.0.3",
+      "published_at": "2026-11-25T13:54:59Z",
+      "body": "## GGID Track 1.0.3\n\n- Pembaruan langsung dari aplikasi: buka Account → About → Check for Updates, lalu ketuk Update Now. Aplikasi mengunduh dan memeriksa file pembaruan sendiri, lalu membuka layar pemasangan Android. Saat pertama kali, Android meminta izin agar GGID Track boleh memasang aplikasi.\n\nVersi ini perlu dipasang manual sekali dari situs unduhan. Setelah itu, pembaruan berikutnya cukup lewat Update Now. Data masuk tetap tersimpan.\n",
+      "assets": [
+        {
+          "name": "GGID-Track-1.0.3.apk",
+          "download_count": 0
+        }
+      ]
+    },
+    {
       "tag_name": "v1.0.2",
       "published_at": "2026-11-25T13:15:25Z",
       "body": "## GGID Track 1.0.2\n\n- Tampilan baru dengan warna GGID: header dan menu bawah berwarna biru tua, dan mode terang tidak lagi serba putih sehingga lebih nyaman di mata.\n- Memperbaiki tulisan yang terpotong di beberapa HP dan tablet Xiaomi, misalnya tombol \"Camera\", \"Geo Fence\", dan satuan km/h.\n\nPasang di atas versi sebelumnya; data masuk tetap tersimpan.\n",
       "assets": [
         {
           "name": "GGID-Track-1.0.2.apk",
-          "download_count": 0
+          "download_count": 4
         }
       ]
     },
@@ -25,7 +36,7 @@
     {
       "tag_name": "v1.0.0",
       "published_at": "2026-11-25T07:45:25Z",
-      "body": "## GGID Track 1.0.0\n\nRilis pertama GGID Track.\n\n- **Live**: posisi semua kendaraan di peta, status bergerak/berhenti/offline, dan lokasi ponsel Anda sendiri.\n- **Devices**: daftar perangkat, detail kendaraan dengan alamat, dan peta per kendaraan.\n- **Dashcam**: video langsung CH1/CH2 dengan suara, bicara ke pengemudi (push-to-talk), putar ulang rekaman kartu SD, klip, foto, dan snapshot alarm.\n- **Alerts**: notifikasi push dengan pengaturan per jenis peringatan, serta geofence.\n- Mode gelap mengikuti sistem, dan pemeriksaan pembaruan di Account → About.\n\nMasuk dengan akun dari penyedia GPS Anda. Pasang versi berikutnya di atas versi ini; data masuk tetap tersimpan.\n",
+      "body": "",
       "assets": [
         {
           "name": "GGID-Track-1.0.0.apk",
