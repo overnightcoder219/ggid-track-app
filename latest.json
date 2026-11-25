@@ -1,7 +1,7 @@
 {
-  "versionName": "1.0.4",
-  "versionCode": 1000004,
-  "apk": "https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.4/GGID-Track-1.0.4.apk",
-  "sha256": "28d9b610fa25c0a1c3fa93d064f645ec0331426084e2c7d14c5210edcea2ba0a",
-  "notes": "• Tab Map kini menjadi beranda armada: ringkasan status di atas peta (Moving, Idle, Parked, Offline beserta jumlahnya). Ketuk salah satu untuk menampilkan kendaraan dengan status itu saja.\n• Daftar kendaraan di bawah peta: yang sedang bergerak di urutan teratas, lengkap dengan kecepatan dan kapan terakhir diperbarui. Ketuk kendaraan untuk langsung menuju lokasinya.\n• Saat satu kendaraan dipilih, tersedia tiga tombol besar: Live, Route, dan Detail.\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan."
+  "versionName": "1.0.5",
+  "versionCode": 1000005,
+  "apk": "https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.5/GGID-Track-1.0.5.apk",
+  "sha256": "d824d8b8a2c223b12080734605b5ffca09b7a407a3e0e308fb8fba646baeda30",
+  "notes": "• Lama berhenti: kartu di tab Devices menampilkan durasi singkat di atas status Parked/Idle (misalnya 30H atau 25M), dan daftar kendaraan di tab Map menampilkan durasi lengkapnya (misalnya \"Parked · berhenti 30 jam 21 menit\").\n• Notifikasi push kini berfungsi. Aktifkan di Account → Notifications; jika izin ditolak, aplikasi memberi tahu cara mengaktifkannya.\n• Daftar kendaraan di tab Map lebih mudah ditarik ke atas atau ke bawah.\n• Tombol Live, Route, dan Detail kini tampil seragam, dan semua tombol video bertuliskan Live.\n• Kolom email dan kata sandi di halaman masuk kini diberi contoh isian.\n• Baris Server di Account disembunyikan karena alamat server sudah tertanam di aplikasi.\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan."
 }
