@@ -1,6 +1,17 @@
 {
   "releases": [
     {
+      "tag_name": "v1.0.4",
+      "published_at": "2026-11-25T19:09:43Z",
+      "body": "## GGID Track 1.0.4\n\n- Tab Map kini menjadi beranda armada: ringkasan status di atas peta (Moving, Idle, Parked, Offline beserta jumlahnya). Ketuk salah satu untuk menampilkan kendaraan dengan status itu saja.\n- Daftar kendaraan di bawah peta: yang sedang bergerak di urutan teratas, lengkap dengan kecepatan dan kapan terakhir diperbarui. Ketuk kendaraan untuk langsung menuju lokasinya.\n- Saat satu kendaraan dipilih, tersedia tiga tombol besar: Live, Route, dan Detail.\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan.\n",
+      "assets": [
+        {
+          "name": "GGID-Track-1.0.4.apk",
+          "download_count": 0
+        }
+      ]
+    },
+    {
       "tag_name": "v1.0.3",
       "published_at": "2026-11-25T13:54:59Z",
       "body": "## GGID Track 1.0.3\n\n- Pembaruan langsung dari aplikasi: buka Account → About → Check for Updates, lalu ketuk Update Now. Aplikasi mengunduh dan memeriksa file pembaruan sendiri, lalu membuka layar pemasangan Android. Saat pertama kali, Android meminta izin agar GGID Track boleh memasang aplikasi.\n\nVersi ini perlu dipasang manual sekali dari situs unduhan. Setelah itu, pembaruan berikutnya cukup lewat Update Now. Data masuk tetap tersimpan.\n",
@@ -25,7 +36,7 @@
     {
       "tag_name": "v1.0.1",
       "published_at": "2026-11-25T09:20:46Z",
-      "body": "## GGID Track 1.0.1\n\n- Memperbaiki aplikasi yang langsung tertutup saat dibuka di versi 1.0.0.\n- Ukuran unduhan jauh lebih kecil: sekitar 46 MB (sebelumnya 154 MB).\n\nPasang di atas versi sebelumnya. Masuk dengan akun dari penyedia GPS Anda.\n\n",
+      "body": "",
       "assets": [
         {
           "name": "GGID-Track-1.0.1.apk",
