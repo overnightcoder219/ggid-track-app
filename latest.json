@@ -1,7 +1,7 @@
 {
-  "versionName": "1.0.3",
-  "versionCode": 1000003,
-  "apk": "https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.3/GGID-Track-1.0.3.apk",
-  "sha256": "e60fdb646b2826eca15c74b249d418609a82d153a75cd32a3c522653850cf76b",
-  "notes": "• Pembaruan langsung dari aplikasi: buka Account → About → Check for Updates, lalu ketuk Update Now. Aplikasi mengunduh dan memeriksa file pembaruan sendiri, lalu membuka layar pemasangan Android. Saat pertama kali, Android meminta izin agar GGID Track boleh memasang aplikasi.\n\nVersi ini perlu dipasang manual sekali dari situs unduhan. Setelah itu, pembaruan berikutnya cukup lewat Update Now. Data masuk tetap tersimpan."
+  "versionName": "1.0.4",
+  "versionCode": 1000004,
+  "apk": "https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.4/GGID-Track-1.0.4.apk",
+  "sha256": "28d9b610fa25c0a1c3fa93d064f645ec0331426084e2c7d14c5210edcea2ba0a",
+  "notes": "• Tab Map kini menjadi beranda armada: ringkasan status di atas peta (Moving, Idle, Parked, Offline beserta jumlahnya). Ketuk salah satu untuk menampilkan kendaraan dengan status itu saja.\n• Daftar kendaraan di bawah peta: yang sedang bergerak di urutan teratas, lengkap dengan kecepatan dan kapan terakhir diperbarui. Ketuk kendaraan untuk langsung menuju lokasinya.\n• Saat satu kendaraan dipilih, tersedia tiga tombol besar: Live, Route, dan Detail.\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan."
 }
