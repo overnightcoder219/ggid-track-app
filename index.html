@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#0a1120">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GGID Track</title>
-  <meta name="description" content="GGID Track: aplikasi pelacak GPS dan dashcam untuk Android. Pantau armada di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar rekaman kartu SD, dan terima notifikasi peringatan.">
+  <meta name="description" content="GGID Track: aplikasi pelacak GPS dan dashcam untuk Android. Pantau armada di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar rekaman kartu SD, dan pantau riwayat peringatan.">
   <!-- seo -->
   <link rel="canonical" href="https://overnightcoder219.github.io/ggid-track-app/">
   <meta name="robots" content="index, follow">
@@ -17,11 +17,11 @@
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:site_name" content="OverNightCoder Apps">
   <meta property="og:title" content="GGID Track – Pelacak GPS dan dashcam untuk armada">
-  <meta property="og:description" content="GGID Track: aplikasi pelacak GPS dan dashcam untuk Android. Pantau armada di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar rekaman kartu SD, dan terima notifikasi peringatan.">
+  <meta property="og:description" content="GGID Track: aplikasi pelacak GPS dan dashcam untuk Android. Pantau armada di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar rekaman kartu SD, dan pantau riwayat peringatan.">
   <meta property="og:url" content="https://overnightcoder219.github.io/ggid-track-app/">
   <meta property="og:image" content="https://overnightcoder219.github.io/ggid-track-app/logo.png">
   <meta name="twitter:card" content="summary">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "GGID Track", "operatingSystem": "Android", "applicationCategory": "BusinessApplication", "description": "GGID Track: aplikasi pelacak GPS dan dashcam untuk Android. Pantau armada di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar rekaman kartu SD, dan terima notifikasi peringatan.", "url": "https://overnightcoder219.github.io/ggid-track-app/", "image": "https://overnightcoder219.github.io/ggid-track-app/logo.png", "author": {"@type": "Person", "name": "OverNightCoder", "url": "https://overnightcoder219.github.io/"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "GGID Track", "operatingSystem": "Android", "applicationCategory": "BusinessApplication", "description": "GGID Track: aplikasi pelacak GPS dan dashcam untuk Android. Pantau armada di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar rekaman kartu SD, dan pantau riwayat peringatan.", "url": "https://overnightcoder219.github.io/ggid-track-app/", "image": "https://overnightcoder219.github.io/ggid-track-app/logo.png", "author": {"@type": "Person", "name": "OverNightCoder", "url": "https://overnightcoder219.github.io/"}}</script>
   <!-- /seo -->
   <link rel="icon" href="logo.png" type="image/png">
   <style>
@@ -150,6 +150,16 @@
     .more-apps b { display: block; font-size: 16px; }
     .more-apps span { color: var(--muted); font-size: 13.5px; line-height: 1.45; }
     /* /onc-extras */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 14px; }
+    .gallery figure { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .gallery a { display: block; }
+    .gallery img { display: block; width: 100%; height: auto; transition: transform .2s; }
+    .gallery a:hover img { transform: scale(1.02); }
+    .gallery figcaption { padding: 10px 14px 12px; font-size: 14px; color: var(--muted); }
+    .gallery figcaption b { display: block; color: var(--text); font-size: 15px; }
+    .muted { color: var(--muted); font-size: 14px; margin: 12px 0 0; }
+    .viewer { position: fixed; inset: 0; background: rgba(4,8,18,.92); display: grid; place-items: center; padding: 16px; z-index: 10; }
+    .viewer img { max-width: 100%; max-height: 92vh; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
   </style>
 <script data-goatcounter="https://overnightcoder.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -167,11 +177,11 @@
     <img class="mark" src="logo.png" alt="" width="88" height="88">
     <h1 data-id>Armada dan dashcam Anda, <span class="grad-text">langsung</span> di HP</h1>
     <h1 data-en>Your fleet and dashcams, <span class="grad-text">live</span> on your phone</h1>
-    <p data-id>Lihat posisi semua kendaraan di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar ulang rekaman kartu SD, dan terima notifikasi saat ada peringatan. Untuk pelanggan layanan pelacak GPS: akun diberikan oleh penyedia GPS Anda.</p>
-    <p data-en>See every vehicle on a live map, watch dashcam video with sound, talk to the driver, play back SD-card recordings and get notified when an alert comes in. For customers of a GPS-tracking service: your account comes from your GPS provider.</p>
+    <p data-id>Lihat posisi semua kendaraan di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar ulang rekaman kartu SD, dan pantau riwayat peringatan. Untuk pelanggan layanan pelacak GPS: akun diberikan oleh penyedia GPS Anda.</p>
+    <p data-en>See every vehicle on a live map, watch dashcam video with sound, talk to the driver, play back SD-card recordings and check the alert history. For customers of a GPS-tracking service: your account comes from your GPS provider.</p>
     <div class="cta">
-      <a class="btn" href="https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.0/GGID-Track-1.0.0.apk" data-goatcounter-click="ggidtrack-download-apk" data-goatcounter-title="Download APK GGID Track">
-        <span data-id>Unduh APK 1.0.0</span><span data-en>Download APK 1.0.0</span>
+      <a class="btn" href="https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.1/GGID-Track-1.0.1.apk" data-goatcounter-click="ggidtrack-download-apk" data-goatcounter-title="Download APK GGID Track">
+        <span data-id>Unduh APK 1.0.1</span><span data-en>Download APK 1.0.1</span>
       </a>
       <a class="btn ghost" href="https://github.com/overnightcoder219/ggid-track-app/releases" data-goatcounter-click="ggidtrack-all-releases">
         <span data-id>Semua rilis</span><span data-en>All releases</span>
@@ -180,8 +190,24 @@
         <span data-id>Cara mulai</span><span data-en>Getting started</span>
       </a>
     </div>
-    <div class="meta"><span class="dl" data-dl="overnightcoder219/ggid-track-app" hidden><b class="n"></b> <span data-id>unduhan</span><span data-en>downloads</span> · </span>Android 7+ · <span data-id>butuh akun dari penyedia GPS</span><span data-en>needs an account from your GPS provider</span> · SHA-256 <code>a8f7fda17e95b5391fc67abe0e2d25215631b90ac76339e70188ca13652eda13</code></div>
+    <div class="meta"><span class="dl" data-dl="overnightcoder219/ggid-track-app" hidden><b class="n"></b> <span data-id>unduhan</span><span data-en>downloads</span> · </span>Android 7+ · <span data-id>butuh akun dari penyedia GPS</span><span data-en>needs an account from your GPS provider</span> · SHA-256 <code>998c7235b1284576370cc4a0d306b56154bd465d102cd7f54e4d079d15ffafcb</code></div>
   </div>
+
+  <section id="screenshots">
+    <h2 data-id>Tangkapan layar</h2><h2 data-en>Screenshots</h2>
+    <div class="gallery">
+      <figure><a href="screenshots/map.jpg" data-view><img src="screenshots/map.jpg" loading="lazy" alt="Peta semua kendaraan" width="1600" height="1023"></a>
+        <figcaption><b><span data-id>Peta</span><span data-en>Map</span></b><span data-id>Semua kendaraan di peta langsung, dengan tombol muat ulang, tampilkan semua, dan lokasi Anda.</span><span data-en>Every vehicle on a live map, with refresh, show all and your own location.</span></figcaption></figure>
+      <figure><a href="screenshots/devices.jpg" data-view><img src="screenshots/devices.jpg" loading="lazy" alt="Daftar perangkat" width="1600" height="1023"></a>
+        <figcaption><b><span data-id>Devices</span><span data-en>Devices</span></b><span data-id>Cari dan saring perangkat (online, offline, tidak aktif), lalu buka Detail, Live, Route, atau menu lain.</span><span data-en>Search and filter devices (online, offline, inactive), then open Detail, Live, Route or more.</span></figcaption></figure>
+      <figure><a href="screenshots/detail.jpg" data-view><img src="screenshots/detail.jpg" loading="lazy" alt="Detail perangkat" width="1600" height="1023"></a>
+        <figcaption><b><span data-id>Device Detail</span><span data-en>Device Detail</span></b><span data-id>Status, ACC, kecepatan, waktu lokasi, dan alamat kendaraan, serta data perangkat yang bisa diubah admin.</span><span data-en>Status, ACC, speed, location time and the vehicle's address, plus device details admins can edit.</span></figcaption></figure>
+      <figure><a href="screenshots/alerts.jpg" data-view><img src="screenshots/alerts.jpg" loading="lazy" alt="Riwayat peringatan" width="1600" height="1023"></a>
+        <figcaption><b><span data-id>Alerts</span><span data-en>Alerts</span></b><span data-id>Riwayat kejadian 24 jam atau 7 hari, bisa dicari per perangkat dan disaring per jenis.</span><span data-en>Events from the last 24 hours or 7 days, searchable by device and filtered by type.</span></figcaption></figure>
+    </div>
+    <p class="muted" data-id>Tangkapan layar dari tablet dengan mode gelap. Data identitas dan lokasi persis disamarkan.</p>
+    <p class="muted" data-en>Screenshots from a tablet in dark mode. Identifying details and exact locations are blurred.</p>
+  </section>
 
   <section>
     <h2 data-id>Fitur</h2><h2 data-en>Features</h2>
@@ -217,9 +243,9 @@
         <p data-en>Take a photo from the dashcam at any time. When an alarm fires, the dashcam sends a snapshot so you can see what happened. All media can be filtered.</p>
       </div>
       <div class="card">
-        <h3 data-id>Peringatan &amp; notifikasi</h3><h3 data-en>Alerts &amp; notifications</h3>
-        <p data-id>Notifikasi push untuk kejadian seperti perangkat offline, kecepatan berlebih, atau masuk/keluar area. Setiap jenis peringatan bisa dinyalakan atau dimatikan sendiri-sendiri.</p>
-        <p data-en>Push notifications for events such as a device going offline, overspeed or entering/leaving an area. Each alert type can be switched on or off on its own.</p>
+        <h3 data-id>Peringatan</h3><h3 data-en>Alerts</h3>
+        <p data-id>Riwayat kejadian seperti mesin menyala/mati, perangkat offline, kecepatan berlebih, atau masuk/keluar area, dengan filter 24 jam dan 7 hari. Setiap jenis peringatan bisa dinyalakan atau dimatikan sendiri-sendiri.</p>
+        <p data-en>A history of events such as ignition on/off, a device going offline, overspeed or entering/leaving an area, filtered by 24 hours or 7 days. Each alert type can be switched on or off on its own.</p>
       </div>
       <div class="card">
         <h3 data-id>Geofence</h3><h3 data-en>Geofences</h3>
@@ -245,9 +271,6 @@
       <li><b><span data-id>Masuk</span><span data-en>Sign in</span><span class="tag req" data-id>wajib</span><span class="tag req" data-en>required</span></b>
         <span data-id>Pakai email dan kata sandi yang diberikan penyedia GPS Anda.</span>
         <span data-en>Use the email and password your GPS provider gave you.</span></li>
-      <li><b><span data-id>Izin notifikasi</span><span data-en>Notification permission</span><span class="tag" data-id>disarankan</span><span class="tag" data-en>recommended</span></b>
-        <span data-id>Supaya peringatan dari kendaraan (offline, kecepatan, geofence, dan lainnya) muncul walau aplikasi sedang tidak dibuka.</span>
-        <span data-en>So vehicle alerts (offline, speed, geofence and more) reach you even while the app is closed.</span></li>
       <li><b><span data-id>Izin lokasi</span><span data-en>Location permission</span><span class="tag" data-id>opsional</span><span class="tag" data-en>optional</span></b>
         <span data-id>Hanya untuk tombol My location di peta, dan hanya saat aplikasi terbuka. Kendaraan tetap terlihat tanpa izin ini.</span>
         <span data-en>Only for the My location button on the map, and only while the app is open. Vehicles still show without it.</span></li>
@@ -302,11 +325,6 @@
         <p data-en>Video is only available while the dashcam is on and online. If the vehicle is off or the signal is weak, wait until it shows online and try again. Your GPS provider may also limit the dashcam's data use.</p>
       </details>
       <details>
-        <summary><span data-id>Saya tidak menerima notifikasi peringatan</span><span data-en>I don't get alert notifications</span></summary>
-        <p data-id>Pastikan izin notifikasi untuk GGID Track menyala di pengaturan Android, lalu cek pengaturan peringatan di aplikasi: setiap jenis peringatan bisa dimatikan sendiri. Di beberapa HP, matikan juga penghemat baterai untuk GGID Track.</p>
-        <p data-en>Make sure notifications are allowed for GGID Track in Android settings, then check the alert settings in the app: each alert type can be switched off on its own. On some phones, also turn off battery saving for GGID Track.</p>
-      </details>
-      <details>
         <summary><span data-id>Bisakah saya mengubah data kendaraan?</span><span data-en>Can I edit vehicle details?</span></summary>
         <p data-id>Akun pelanggan hanya bisa melihat. Perubahan nama, perangkat, atau kendaraan dilakukan oleh penyedia GPS Anda.</p>
         <p data-en>Customer accounts are view-only. Changes to names, devices or vehicles are made by your GPS provider.</p>
@@ -335,8 +353,9 @@
   </section>
   <!-- /onc-more -->
 
+  <div class="viewer" hidden><img alt=""></div>
   <footer>
-    GGID Track 1.0.0 · © 2026 OverNightCoder · <a href="https://github.com/overnightcoder219/ggid-track-app/releases" data-goatcounter-click="ggidtrack-footer-releases">Releases</a> · <a href="mailto:masterz1030@gmail.com?subject=GGID%20Track">masterz1030@gmail.com</a>
+    GGID Track 1.0.1 · © 2026 OverNightCoder · <a href="https://github.com/overnightcoder219/ggid-track-app/releases" data-goatcounter-click="ggidtrack-footer-releases">Releases</a> · <a href="mailto:masterz1030@gmail.com?subject=GGID%20Track">masterz1030@gmail.com</a>
   </footer>
 </div>
 <button type="button" class="to-top" aria-label="Back to top" title="Back to top">↑</button>
@@ -483,6 +502,20 @@
         if (sec) sec.hidden = false;   // bagian ini tersembunyi sampai datanya ada (tanpa data: tidak tampil sama sekali)
       })
       .catch(function () { /* releases.json belum ada/offline: bagian tetap tersembunyi */ });
+  })();
+  (function () {
+    var viewer = document.querySelector('.viewer'), img = viewer.querySelector('img');
+    document.querySelectorAll('[data-view]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        img.src = el.getAttribute('href') || el.getAttribute('src');
+        img.alt = (el.querySelector('img') || el).alt || '';
+        viewer.hidden = false;
+      });
+    });
+    function close() { viewer.hidden = true; img.removeAttribute('src'); }
+    viewer.addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   })();
 </script>
 <!-- /onc-extras-js -->
