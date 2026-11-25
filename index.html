@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="color-scheme" content="dark">
+  <meta name="darkreader-lock">
+  <meta name="theme-color" content="#0a1120">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GGID Track</title>
+  <meta name="description" content="GGID Track: aplikasi pelacak GPS dan dashcam untuk Android. Pantau armada di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar rekaman kartu SD, dan terima notifikasi peringatan.">
+  <!-- seo -->
+  <link rel="canonical" href="https://overnightcoder219.github.io/ggid-track-app/">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="OverNightCoder">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="OverNightCoder Apps">
+  <meta property="og:title" content="GGID Track – Pelacak GPS dan dashcam untuk armada">
+  <meta property="og:description" content="GGID Track: aplikasi pelacak GPS dan dashcam untuk Android. Pantau armada di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar rekaman kartu SD, dan terima notifikasi peringatan.">
+  <meta property="og:url" content="https://overnightcoder219.github.io/ggid-track-app/">
+  <meta property="og:image" content="https://overnightcoder219.github.io/ggid-track-app/logo.png">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "GGID Track", "operatingSystem": "Android", "applicationCategory": "BusinessApplication", "description": "GGID Track: aplikasi pelacak GPS dan dashcam untuk Android. Pantau armada di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar rekaman kartu SD, dan terima notifikasi peringatan.", "url": "https://overnightcoder219.github.io/ggid-track-app/", "image": "https://overnightcoder219.github.io/ggid-track-app/logo.png", "author": {"@type": "Person", "name": "OverNightCoder", "url": "https://overnightcoder219.github.io/"}}</script>
+  <!-- /seo -->
+  <link rel="icon" href="logo.png" type="image/png">
+  <style>
+    /* Halaman sengaja gelap (seperti aplikasinya); deklarasi ini mencegah mode gelap paksa browser mewarnai ulang. */
+    :root {
+      color-scheme: dark;
+      /* dari ikon: hijau tua, hijau mint, oranye */
+      --bg: #0a1120; --surface: #111a2c; --surface-2: #162238; --line: #22324d;
+      --text: #e8eef8; --muted: #93a3bc; --accent: #1f6feb; --accent-2: #3b9bff; --accent-3: #2ee6c8;
+      --accent-ink: #ffffff; --warn: #ffc46b;
+      --grad: linear-gradient(120deg, #1f6feb 0%, #1858c9 60%, #0f766e 100%);
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: radial-gradient(900px 520px at 85% -120px, rgba(59,155,255,.16), transparent 70%), radial-gradient(700px 460px at -10% 180px, rgba(46,230,200,.08), transparent 70%), var(--bg); background-repeat: no-repeat; color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    a { color: var(--accent-2); }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+    header.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .3px; }
+    .brand img { width: 34px; height: 34px; border-radius: 9px; }
+    .lang button { background: none; border: 1px solid var(--line); color: var(--muted); padding: 4px 10px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 13px; }
+    .lang button[aria-pressed="true"] { color: var(--text); border-color: var(--accent); }
+    .hero { padding: 36px 0 28px; }
+    .hero .mark { width: 88px; height: 88px; border-radius: 22px; box-shadow: 0 14px 40px rgba(31,111,235,.4); margin-bottom: 20px; }
+    .grad-text { color: var(--accent-2); }
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+      .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    }
+    .hero h1 { font-size: clamp(28px, 6vw, 44px); line-height: 1.15; margin: 0 0 12px; }
+    .hero p { color: var(--muted); font-size: 18px; margin: 0 0 24px; max-width: 680px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn { display: inline-block; background: var(--grad); color: var(--accent-ink); font-weight: 700; text-decoration: none; padding: 14px 22px; border-radius: 12px; box-shadow: 0 8px 24px rgba(31,111,235,.25); transition: transform .15s, box-shadow .15s; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(31,111,235,.35); }
+    .btn.ghost { background: rgba(255,255,255,.02); color: var(--text); border: 1px solid var(--line); font-weight: 600; box-shadow: none; }
+    .btn.ghost:hover { border-color: var(--accent); }
+    .meta { color: var(--muted); font-size: 13px; margin-top: 14px; word-break: break-all; }
+    .meta code { color: var(--text); }
+    .meta .dl .n { color: var(--text); font-weight: 700; }
+    section { padding: 28px 0; border-top: 1px solid var(--line); }
+    h2 { font-size: 22px; margin: 0 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+    .card { background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--line); border-radius: 14px; padding: 16px; position: relative; overflow: hidden; transition: border-color .15s; }
+    .card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 2px; background: var(--grad); opacity: .8; }
+    .card:hover { border-color: #2f4a73; }
+    .card h3 { margin: 0 0 6px; font-size: 16px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: step; display: grid; gap: 10px; }
+    ol.steps li { counter-increment: step; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px 14px 56px; position: relative; }
+    ol.steps li::before { content: counter(step); position: absolute; left: 16px; top: 14px; width: 28px; height: 28px; border-radius: 50%; background: var(--grad); color: var(--accent-ink); font-weight: 700; display: grid; place-items: center; font-size: 14px; }
+    ol.steps b { display: block; }
+    ol.steps span { color: var(--muted); font-size: 14px; }
+    .tag { display: inline-block; font-size: 11px; padding: 1px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 2px; border: 1px solid var(--line); color: var(--muted); }
+    .tag.req { border-color: var(--accent); color: var(--accent-2); }
+    details.group { background: none; border: 0; padding: 0; margin: 0 0 6px; }
+    details.group > summary { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 12px 28px 12px 0; border-bottom: 1px solid var(--line); }
+    details.group[open] > summary { color: var(--accent-2); margin-bottom: 10px; }
+    details.group > summary::after { top: 15px; }
+    details.group[open] > summary::after { top: 19px; border-color: var(--accent); }
+    details.group .count { color: var(--muted); font-weight: 400; letter-spacing: 0; text-transform: none; margin-left: 6px; }
+    details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 0 16px; margin-bottom: 8px; }
+    details[open] { border-color: var(--accent); }
+    summary { cursor: pointer; font-weight: 600; padding: 13px 28px 13px 0; list-style: none; position: relative; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: ""; position: absolute; right: 4px; top: 18px; width: 8px; height: 8px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); transition: transform .15s; }
+    details[open] > summary::after { transform: rotate(-135deg); top: 22px; }
+    details p { color: var(--muted); margin: 0 0 14px; font-size: 15px; line-height: 1.55; }
+    details p + p { margin-top: -6px; }
+    .contact { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-top: 18px; }
+    .contact p { margin: 0; color: var(--muted); font-size: 15px; }
+    .contact a.mail { display: inline-block; background: var(--grad); color: var(--accent-ink); font-weight: 600; text-decoration: none; padding: 10px 16px; border-radius: 10px; }
+    .note { border-left: 3px solid var(--warn); padding: 8px 14px; background: var(--surface); border-radius: 0 10px 10px 0; color: var(--muted); font-size: 14px; margin-top: 18px; }
+    footer { color: var(--muted); font-size: 13px; padding: 28px 0 40px; border-top: 1px solid var(--line); }
+    .to-top { position: fixed; right: 16px; bottom: 20px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--grad); color: var(--accent-ink); font-weight: 700; font-size: 20px; line-height: 1; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.35); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .2s, transform .2s; }
+    .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+    [hidden] { display: none !important; }
+    [data-en] { display: none; }
+    html[lang="en"] [data-id] { display: none; }
+    html[lang="en"] [data-en] { display: revert; }
+    /* onc-fab: tombol melayang ke landing OverNightCoder (kiri bawah; kanan bawah dipakai .to-top) */
+    .onc-fab { position: fixed; left: max(16px, env(safe-area-inset-left)); bottom: max(20px, env(safe-area-inset-bottom)); z-index: 9;
+      display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 16px 0 6px; border-radius: 999px;
+      background: rgba(12,18,34,.88); border: 1px solid var(--line); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: transform .15s, border-color .15s; }
+    .onc-fab:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .onc-fab:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .onc-fab img { width: 34px; height: 34px; border-radius: 10px; display: block; }
+    @media (max-width: 560px) { .onc-fab { width: 46px; padding: 0; justify-content: center; } .onc-fab .t { display: none; } }
+    @media print { .onc-fab { display: none; } }
+    /* onc-extras: catatan rilis, bilah unduh (HP), kode QR (desktop), aplikasi lain */
+    .rel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 4px 18px 6px; margin-bottom: 10px; }
+    .rel > summary, .rel-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-weight: 700; padding: 13px 28px 11px 0; }
+    .rel-head .ver, .rel > summary .ver { font-size: 17px; }
+    .rel .date { color: var(--muted); font-size: 13px; font-weight: 400; }
+    .rel .badge { font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--grad); color: var(--accent-ink); }
+    .rel-body { color: var(--muted); font-size: 14.5px; line-height: 1.6; padding-bottom: 10px; }
+    .rel-body h4 { color: var(--text); font-size: 14px; margin: 12px 0 4px; }
+    .rel-body p { margin: 6px 0; }
+    .rel-body ul { margin: 4px 0 8px; padding-left: 18px; }
+    .rel-body li { margin: 3px 0; }
+    .rel-body b { color: var(--text); }
+    .rel-body code { color: var(--text); background: var(--surface-2); padding: 0 5px; border-radius: 5px; font-size: 13px; }
+    .rel-more { font-size: 14px; }
+    details.rel { padding: 0 18px; }
+    details.rel[open] { border-color: var(--line); }
+    .qr-hint { display: none; }
+    @media (min-width: 900px) and (hover: hover) {
+      .qr-hint { display: inline-flex; align-items: center; gap: 14px; margin-top: 16px; padding: 10px 16px 10px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+      .qr-hint svg { width: 92px; height: 92px; display: block; border-radius: 8px; flex: none; }
+      .qr-hint p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.45; max-width: 230px; }
+      .qr-hint b { color: var(--text); display: block; font-size: 15px; }
+    }
+    .dl-bar { display: none; }
+    @media (max-width: 720px) {
+      .dl-bar { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 8; padding: 10px 16px max(10px, env(safe-area-inset-bottom)); background: rgba(9,14,28,.94); border-top: 1px solid var(--line); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transform: translateY(110%); transition: transform .25s; }
+      .dl-bar .btn { display: block; text-align: center; padding: 12px 16px; margin-left: 58px; }
+      body.dl-bar-on .dl-bar { transform: none; }
+      body.dl-bar-on .onc-fab { bottom: calc(max(10px, env(safe-area-inset-bottom)) + 9px); }
+      body.dl-bar-on .to-top { bottom: 84px; }
+      body.dl-bar-on footer { padding-bottom: 110px; }
+    }
+    @media print { .dl-bar, .qr-hint { display: none !important; } }
+    .more-apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+    .more-apps a { display: flex; gap: 14px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px; color: var(--text); text-decoration: none; transition: border-color .15s, transform .15s; }
+    .more-apps a:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .more-apps img { width: 52px; height: 52px; border-radius: 13px; flex: none; }
+    .more-apps b { display: block; font-size: 16px; }
+    .more-apps span { color: var(--muted); font-size: 13.5px; line-height: 1.45; }
+    /* /onc-extras */
+  </style>
+<script data-goatcounter="https://overnightcoder.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><img src="logo.png" alt="" width="34" height="34"> GGID Track</div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="id" aria-pressed="true">ID</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <img class="mark" src="logo.png" alt="" width="88" height="88">
+    <h1 data-id>Armada dan dashcam Anda, <span class="grad-text">langsung</span> di HP</h1>
+    <h1 data-en>Your fleet and dashcams, <span class="grad-text">live</span> on your phone</h1>
+    <p data-id>Lihat posisi semua kendaraan di peta secara langsung, tonton video dashcam dengan suara, bicara ke pengemudi, putar ulang rekaman kartu SD, dan terima notifikasi saat ada peringatan. Untuk pelanggan layanan pelacak GPS: akun diberikan oleh penyedia GPS Anda.</p>
+    <p data-en>See every vehicle on a live map, watch dashcam video with sound, talk to the driver, play back SD-card recordings and get notified when an alert comes in. For customers of a GPS-tracking service: your account comes from your GPS provider.</p>
+    <div class="cta">
+      <a class="btn" href="https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.0/GGID-Track-1.0.0.apk" data-goatcounter-click="ggidtrack-download-apk" data-goatcounter-title="Download APK GGID Track">
+        <span data-id>Unduh APK 1.0.0</span><span data-en>Download APK 1.0.0</span>
+      </a>
+      <a class="btn ghost" href="https://github.com/overnightcoder219/ggid-track-app/releases" data-goatcounter-click="ggidtrack-all-releases">
+        <span data-id>Semua rilis</span><span data-en>All releases</span>
+      </a>
+      <a class="btn ghost" href="#setup">
+        <span data-id>Cara mulai</span><span data-en>Getting started</span>
+      </a>
+    </div>
+    <div class="meta"><span class="dl" data-dl="overnightcoder219/ggid-track-app" hidden><b class="n"></b> <span data-id>unduhan</span><span data-en>downloads</span> · </span>Android 7+ · <span data-id>butuh akun dari penyedia GPS</span><span data-en>needs an account from your GPS provider</span> · SHA-256 <code>a8f7fda17e95b5391fc67abe0e2d25215631b90ac76339e70188ca13652eda13</code></div>
+  </div>
+
+  <section>
+    <h2 data-id>Fitur</h2><h2 data-en>Features</h2>
+    <div class="grid">
+      <div class="card">
+        <h3 data-id>Peta langsung</h3><h3 data-en>Live map</h3>
+        <p data-id>Semua kendaraan dalam satu peta yang bergerak mengikuti posisi terbaru, dengan tampilan armada dan tombol My location untuk melihat posisi Anda sendiri. Mode gelap di peta juga.</p>
+        <p data-en>Every vehicle on one map that follows the latest positions, with a fleet view and a My location button for your own position. Dark mode on the map too.</p>
+      </div>
+      <div class="card">
+        <h3 data-id>Daftar &amp; detail perangkat</h3><h3 data-en>Device list &amp; detail</h3>
+        <p data-id>Status setiap kendaraan sekilas: online atau offline, kecepatan, dan waktu pembaruan terakhir. Detail perangkat menampilkan alamat lokasinya dan tindakan yang tersedia.</p>
+        <p data-en>Each vehicle's status at a glance: online or offline, speed and the last update. Device detail shows the address it is at and the actions available.</p>
+      </div>
+      <div class="card">
+        <h3 data-id>Video dashcam langsung</h3><h3 data-en>Live dashcam video</h3>
+        <p data-id>Tonton kamera depan dan kabin (CH1/CH2) secara langsung, lengkap dengan suara. Kualitas HD bisa dinyalakan bila sinyal cukup.</p>
+        <p data-en>Watch the front and cabin cameras (CH1/CH2) live, with sound. HD quality can be switched on when the signal allows.</p>
+      </div>
+      <div class="card">
+        <h3 data-id>Bicara ke pengemudi</h3><h3 data-en>Talk to the driver</h3>
+        <p data-id>Tahan tombol push-to-talk untuk berbicara ke pengemudi lewat speaker dashcam, tanpa menelepon.</p>
+        <p data-en>Hold the push-to-talk button to speak to the driver through the dashcam's speaker, no phone call needed.</p>
+      </div>
+      <div class="card">
+        <h3 data-id>Rekaman kartu SD &amp; klip</h3><h3 data-en>SD-card playback &amp; clips</h3>
+        <p data-id>Cari dan putar ulang rekaman yang tersimpan di kartu SD dashcam, lalu simpan potongan pentingnya sebagai klip.</p>
+        <p data-en>Find and play back recordings stored on the dashcam's SD card, and keep the important parts as clips.</p>
+      </div>
+      <div class="card">
+        <h3 data-id>Foto &amp; snapshot peringatan</h3><h3 data-en>Photos &amp; alarm snapshots</h3>
+        <p data-id>Ambil foto dari dashcam kapan saja. Saat ada peringatan, dashcam mengirim snapshot sehingga Anda bisa melihat apa yang terjadi. Semua media bisa difilter.</p>
+        <p data-en>Take a photo from the dashcam at any time. When an alarm fires, the dashcam sends a snapshot so you can see what happened. All media can be filtered.</p>
+      </div>
+      <div class="card">
+        <h3 data-id>Peringatan &amp; notifikasi</h3><h3 data-en>Alerts &amp; notifications</h3>
+        <p data-id>Notifikasi push untuk kejadian seperti perangkat offline, kecepatan berlebih, atau masuk/keluar area. Setiap jenis peringatan bisa dinyalakan atau dimatikan sendiri-sendiri.</p>
+        <p data-en>Push notifications for events such as a device going offline, overspeed or entering/leaving an area. Each alert type can be switched on or off on its own.</p>
+      </div>
+      <div class="card">
+        <h3 data-id>Geofence</h3><h3 data-en>Geofences</h3>
+        <p data-id>Tandai area seperti pool, gudang, atau rute pelanggan, lalu dapatkan peringatan saat kendaraan masuk atau keluar.</p>
+        <p data-en>Mark areas such as a depot, a warehouse or a customer's site and get an alert when a vehicle enters or leaves.</p>
+      </div>
+      <div class="card">
+        <h3 data-id>Terang &amp; gelap, selalu terbaru</h3><h3 data-en>Light &amp; dark, always current</h3>
+        <p data-id>Tampilan mengikuti mode terang atau gelap HP. Periksa versi baru dan kirim laporan masalah dari Account → About.</p>
+        <p data-en>The app follows the phone's light or dark mode. Check for a new version and send a bug report from Account → About.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="setup">
+    <h2 data-id>Pengaturan awal</h2><h2 data-en>First-time setup</h2>
+    <p data-id>GGID Track tidak punya pendaftaran sendiri. Akun dibuat oleh penyedia layanan GPS Anda, lengkap dengan kendaraan yang boleh Anda lihat.</p>
+    <p data-en>GGID Track has no self sign-up. Your GPS service provider creates your account, together with the vehicles you may see.</p>
+    <ol class="steps">
+      <li><b><span data-id>Pasang APK</span><span data-en>Install the APK</span></b>
+        <span data-id>Unduh di HP dan izinkan pemasangan dari browser (sumber tidak dikenal). Kalau Play Protect bertanya, pilih "Install anyway".</span>
+        <span data-en>Download on the phone and allow installs from the browser (unknown sources). If Play Protect asks, choose "Install anyway".</span></li>
+      <li><b><span data-id>Masuk</span><span data-en>Sign in</span><span class="tag req" data-id>wajib</span><span class="tag req" data-en>required</span></b>
+        <span data-id>Pakai email dan kata sandi yang diberikan penyedia GPS Anda.</span>
+        <span data-en>Use the email and password your GPS provider gave you.</span></li>
+      <li><b><span data-id>Izin notifikasi</span><span data-en>Notification permission</span><span class="tag" data-id>disarankan</span><span class="tag" data-en>recommended</span></b>
+        <span data-id>Supaya peringatan dari kendaraan (offline, kecepatan, geofence, dan lainnya) muncul walau aplikasi sedang tidak dibuka.</span>
+        <span data-en>So vehicle alerts (offline, speed, geofence and more) reach you even while the app is closed.</span></li>
+      <li><b><span data-id>Izin lokasi</span><span data-en>Location permission</span><span class="tag" data-id>opsional</span><span class="tag" data-en>optional</span></b>
+        <span data-id>Hanya untuk tombol My location di peta, dan hanya saat aplikasi terbuka. Kendaraan tetap terlihat tanpa izin ini.</span>
+        <span data-en>Only for the My location button on the map, and only while the app is open. Vehicles still show without it.</span></li>
+      <li><b><span data-id>Izin mikrofon</span><span data-en>Microphone permission</span><span class="tag" data-id>opsional</span><span class="tag" data-en>optional</span></b>
+        <span data-id>Untuk push-to-talk: berbicara ke pengemudi lewat dashcam. Diminta saat pertama kali Anda memakainya.</span>
+        <span data-en>For push-to-talk: speaking to the driver through the dashcam. Asked the first time you use it.</span></li>
+      <li><b><span data-id>Izin kamera</span><span data-en>Camera permission</span><span class="tag" data-id>khusus administrator</span><span class="tag" data-en>administrators only</span></b>
+        <span data-id>Untuk memindai barcode IMEI dashcam saat menambah perangkat. Pengguna biasa tidak akan ditanya.</span>
+        <span data-en>For scanning the dashcam's IMEI barcode when adding a device. Regular users are never asked.</span></li>
+    </ol>
+  </section>
+
+  <!-- onc-whatsnew -->
+  <section id="whats-new" hidden>
+    <h2 data-id>Yang baru</h2><h2 data-en>What's new</h2>
+    <div class="rel-list" data-rel="overnightcoder219/ggid-track-app">
+      <p class="rel-more"><a href="https://github.com/overnightcoder219/ggid-track-app/releases"><span data-id>Lihat catatan rilis di GitHub</span><span data-en>See the release notes on GitHub</span></a></p>
+    </div>
+  </section>
+  <!-- /onc-whatsnew -->
+
+  <section class="faq">
+    <h2>FAQ</h2>
+    <details class="group" open>
+      <summary><span data-id>Umum</span><span data-en>General</span><span class="count">· 4</span></summary>
+      <details>
+        <summary><span data-id>Bagaimana cara mendapatkan akun?</span><span data-en>How do I get an account?</span></summary>
+        <p data-id>Hubungi penyedia layanan GPS yang memasang pelacak atau dashcam di kendaraan Anda. Mereka membuat akun dan menentukan kendaraan mana yang bisa Anda lihat. Lupa kata sandi atau kendaraan tidak muncul juga ditangani oleh mereka.</p>
+        <p data-en>Contact the GPS service provider that installed the tracker or dashcam in your vehicle. They create the account and decide which vehicles you can see. Forgotten passwords and missing vehicles are handled by them too.</p>
+      </details>
+      <details>
+        <summary><span data-id>Kenapa tidak ada di Play Store?</span><span data-en>Why isn't it on the Play Store?</span></summary>
+        <p data-id>Belum, untuk sekarang aplikasi dibagikan langsung di sini. Setiap rilis ditandatangani dengan kunci yang sama dan disertai SHA-256, jadi pembaruan tinggal dipasang di atas versi lama.</p>
+        <p data-en>Not yet; for now the app is distributed here. Every release is signed with the same key and comes with its SHA-256, so updates install over the previous version.</p>
+      </details>
+      <details>
+        <summary><span data-id>Apakah aman dipasang dari luar Play Store?</span><span data-en>Is it safe to install from outside the Play Store?</span></summary>
+        <p data-id>APK ditandatangani dan diunggah ke halaman Releases di GitHub. Untuk memastikan file tidak berubah, bandingkan SHA-256 file yang Anda unduh dengan angka di atas. Android juga menolak memasang pembaruan yang ditandatangani dengan kunci lain.</p>
+        <p data-en>The APK is signed and published on the GitHub Releases page. To make sure the file wasn't altered, compare the SHA-256 of your download with the value above. Android also refuses to install an update signed with a different key.</p>
+      </details>
+      <details>
+        <summary><span data-id>Bagaimana cara memperbarui?</span><span data-en>How do I update?</span></summary>
+        <p data-id>Buka Account → About lalu ketuk Check for Updates; aplikasi memberi tahu bila ada versi baru dan membuka tautan unduhannya. Pasang APK baru di atas yang lama; Anda tetap masuk dan pengaturan tidak hilang.</p>
+        <p data-en>Open Account → About and tap Check for Updates; the app tells you when a new version is out and opens its download link. Install the new APK over the old one; you stay signed in and your settings are kept.</p>
+      </details>
+    </details>
+    <details class="group">
+      <summary><span data-id>Penggunaan</span><span data-en>Using it</span><span class="count">· 3</span></summary>
+      <details>
+        <summary><span data-id>Kenapa video dashcam tidak muncul?</span><span data-en>Why doesn't the dashcam video show?</span></summary>
+        <p data-id>Video hanya tersedia saat dashcam menyala dan online. Bila kendaraan mati atau sinyal lemah, tunggu sampai statusnya online lalu coba lagi. Paket data dashcam juga bisa dibatasi oleh penyedia GPS Anda.</p>
+        <p data-en>Video is only available while the dashcam is on and online. If the vehicle is off or the signal is weak, wait until it shows online and try again. Your GPS provider may also limit the dashcam's data use.</p>
+      </details>
+      <details>
+        <summary><span data-id>Saya tidak menerima notifikasi peringatan</span><span data-en>I don't get alert notifications</span></summary>
+        <p data-id>Pastikan izin notifikasi untuk GGID Track menyala di pengaturan Android, lalu cek pengaturan peringatan di aplikasi: setiap jenis peringatan bisa dimatikan sendiri. Di beberapa HP, matikan juga penghemat baterai untuk GGID Track.</p>
+        <p data-en>Make sure notifications are allowed for GGID Track in Android settings, then check the alert settings in the app: each alert type can be switched off on its own. On some phones, also turn off battery saving for GGID Track.</p>
+      </details>
+      <details>
+        <summary><span data-id>Bisakah saya mengubah data kendaraan?</span><span data-en>Can I edit vehicle details?</span></summary>
+        <p data-id>Akun pelanggan hanya bisa melihat. Perubahan nama, perangkat, atau kendaraan dilakukan oleh penyedia GPS Anda.</p>
+        <p data-en>Customer accounts are view-only. Changes to names, devices or vehicles are made by your GPS provider.</p>
+      </details>
+    </details>
+    <div class="note">
+      <span data-id>Akun, kendaraan, dan perangkat dikelola oleh penyedia layanan GPS Anda. Untuk masalah akun, hubungi mereka terlebih dahulu.</span>
+      <span data-en>Accounts, vehicles and devices are managed by your GPS service provider. For account issues, contact them first.</span>
+    </div>
+    <div class="contact">
+      <p data-id><b>Saran, masukan, atau laporan masalah aplikasi?</b><br>Kirim email, atau pakai Report a Bug di Account → About. Sertakan versi GGID Track, tipe HP, dan apa yang terjadi.</p>
+      <p data-en><b>Suggestions, feedback or an app bug?</b><br>Send an email, or use Report a Bug in Account → About. Include the GGID Track version, your phone and what happened.</p>
+      <a class="mail" href="mailto:masterz1030@gmail.com?subject=GGID%20Track">masterz1030@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- onc-more -->
+  <section id="more-apps">
+    <h2 data-id>Aplikasi lain dari OverNightCoder</h2><h2 data-en>More apps by OverNightCoder</h2>
+    <div class="more-apps">
+      <a href="https://omosync.github.io/" data-goatcounter-click="ggidtrack-to-omosync"><img src="https://overnightcoder219.github.io/assets/omosync-logo.webp" alt="" width="52" height="52" loading="lazy"><div><b>OmoSync</b><span data-id>Android Auto di layar cockpit OMOWAY OMO X.</span><span data-en>Android Auto on the OMOWAY OMO X cockpit screen.</span></div></a>
+      <a href="https://overnightcoder219.github.io/systemmonitor-app/" data-goatcounter-click="ggidtrack-to-systemmonitor"><img src="https://overnightcoder219.github.io/assets/systemmonitor-logo.svg" alt="" width="52" height="52" loading="lazy"><div><b>SystemMonitor</b><span data-id>Task Manager ala Windows: CPU, RAM, GPU per aplikasi.</span><span data-en>A Windows-style Task Manager: CPU, RAM, GPU per app.</span></div></a>
+      <a href="https://overnightcoder219.github.io/tabstation-app/" data-goatcounter-click="ggidtrack-to-tabstation"><img src="https://overnightcoder219.github.io/assets/tabstation-logo.svg" alt="" width="52" height="52" loading="lazy"><div><b>TabStation</b><span data-id>Mode desktop untuk tablet: Dock, menu bar, taskbar.</span><span data-en>Desktop mode for tablets: Dock, menu bar, taskbar.</span></div></a>
+      <a href="https://overnightcoder219.github.io/chargecall-app/" data-goatcounter-click="ggidtrack-to-chargecall"><img src="https://overnightcoder219.github.io/assets/chargecall-logo.svg" alt="" width="52" height="52" loading="lazy"><div><b>ChargeCall</b><span data-id>Peringatan baterai bersuara, tanpa iklan.</span><span data-en>Battery alerts that talk, without ads.</span></div></a>
+    </div>
+  </section>
+  <!-- /onc-more -->
+
+  <footer>
+    GGID Track 1.0.0 · © 2026 OverNightCoder · <a href="https://github.com/overnightcoder219/ggid-track-app/releases" data-goatcounter-click="ggidtrack-footer-releases">Releases</a> · <a href="mailto:masterz1030@gmail.com?subject=GGID%20Track">masterz1030@gmail.com</a>
+  </footer>
+</div>
+<button type="button" class="to-top" aria-label="Back to top" title="Back to top">↑</button>
+<!-- onc-gh -->
+<script>
+  // Data rilis dari releases.json di situs aplikasi masing-masing (ditulis tiap jam & tiap rilis oleh workflow
+  // .github/workflows/releases-json.yml di repo publiknya). Tanpa API GitHub dari browser, jadi tanpa batas 60/jam per IP.
+  // Bentuk: { releases: [{ tag_name, published_at, body, assets: [{ name, download_count }] }] }, terbaru dulu.
+  window.oncReleases = (function () {
+    var mem = {};
+    function siteOf(repo) {
+      var m = /^([A-Za-z0-9-]+)\/([A-Za-z0-9._-]+)$/.exec(repo);
+      if (!m) return null;
+      var owner = m[1].toLowerCase(), name = m[2].toLowerCase();
+      return name === owner + '.github.io' ? 'https://' + name + '/' : 'https://' + owner + '.github.io/' + name + '/';
+    }
+    return function (repo) {
+      if (mem[repo]) return mem[repo];
+      var site = siteOf(repo);
+      // Di halaman aplikasinya sendiri: baca dari situs ini (path relatif) supaya juga jalan di salinan lokal.
+      var own = site && location.href.indexOf(site) === 0;
+      var url = own || !site ? 'releases.json' : site + 'releases.json';
+      return (mem[repo] = fetch(url, { cache: 'no-cache' })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (d) {
+          if (!d || !Array.isArray(d.releases)) throw new Error('format');
+          return d.releases.filter(function (r) { return r && typeof r.tag_name === 'string'; }).map(function (r) {
+            return { tag_name: r.tag_name, published_at: String(r.published_at || ''), body: typeof r.body === 'string' ? r.body : '',
+              assets: Array.isArray(r.assets) ? r.assets.map(function (a) { return { name: String(a && a.name || ''), download_count: Number(a && a.download_count) || 0 }; }) : [] };
+          });
+        }));
+    };
+  })();
+</script>
+<!-- /onc-gh -->
+<script>
+  (function () {
+    // Jumlah unduhan APK dari rilis GitHub (releases.json situs aplikasinya). Gagal -> lencana tetap tersembunyi.
+    document.querySelectorAll('[data-dl]').forEach(function (el) {
+      oncReleases(el.getAttribute('data-dl'))
+        .then(function (rels) {
+          var n = 0;
+          rels.forEach(function (r) { (r.assets || []).forEach(function (a) { if (/\.apk$/i.test(a.name)) n += a.download_count || 0; }); });
+          if (n <= 0) return;
+          el.querySelector('.n').textContent = n.toLocaleString();
+          el.hidden = false;
+        })
+        .catch(function () { /* offline atau limit API: biarkan tersembunyi */ });
+    });
+  })();
+  (function () {
+    var top = document.querySelector('.to-top');
+    function onScroll() { top.classList.toggle('show', window.scrollY > 700); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  })();
+  (function () {
+    var root = document.documentElement;
+    function apply(lang) {
+      root.lang = lang;
+      document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
+      });
+      try { localStorage.setItem('ggidtrack-lang', lang); } catch (e) { /* storage unavailable */ }
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('ggidtrack-lang'); } catch (e) { /* storage unavailable */ }
+    apply(saved || (navigator.language && navigator.language.toLowerCase().indexOf('id') === 0 ? 'id' : 'en'));
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.addEventListener('click', function () { apply(b.getAttribute('data-set-lang')); });
+    });
+  })();
+</script>
+<!-- onc-extras-js -->
+<div class="dl-bar" aria-hidden="true"></div>
+<script>
+  (function () {
+    // Bilah unduh di HP: salinan tombol unduh hero, muncul setelah tombol aslinya lewat dari layar.
+    var hero = document.querySelector('.hero .cta'), bar = document.querySelector('.dl-bar');
+    var src = hero && hero.querySelector('a.btn');
+    if (!src || !bar || !('IntersectionObserver' in window)) return;
+    var b = src.cloneNode(true);
+    b.tabIndex = -1;
+    // klik dari bilah ini dihitung terpisah di GoatCounter
+    if (b.getAttribute('data-goatcounter-click')) b.setAttribute('data-goatcounter-click', b.getAttribute('data-goatcounter-click') + '-sticky');
+    bar.appendChild(b);
+    new IntersectionObserver(function (es) {
+      var e = es[0], on = !e.isIntersecting && e.boundingClientRect.top < 0;
+      document.body.classList.toggle('dl-bar-on', on);
+      bar.setAttribute('aria-hidden', String(!on));
+      b.tabIndex = on ? 0 : -1;
+    }).observe(hero);
+  })();
+  (function () {
+    // "Yang baru": 3 rilis terakhir dari releases.json. Gagal/kosong -> seluruh bagian tetap tersembunyi.
+    var box = document.querySelector('[data-rel]');
+    if (!box) return;
+    var repo = box.getAttribute('data-rel');
+    function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+    function inline(s) {
+      return esc(s)
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+        .replace(/(^|[\s(])\*([^*\s][^*]*)\*/g, '$1<i>$2</i>')
+        .replace(/\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g, '<a href="$2" rel="noopener">$1</a>');
+    }
+    function md(text) {
+      var out = [], list = false, para = [];
+      function flush() { if (para.length) { out.push('<p>' + inline(para.join(' ')) + '</p>'); para = []; } }
+      function endList() { if (list) { out.push('</ul>'); list = false; } }
+      text.replace(/\r/g, '').split('\n').forEach(function (raw, i) {
+        var l = raw.trim(), m;
+        if (i === 0 && /^#{1,3}\s/.test(l)) return;          // judul rilis sudah ditampilkan sendiri
+        if (/^\|/.test(l) || /^-{3,}$/.test(l)) return;       // tabel/garis: lihat catatan lengkap
+        if (!l) { flush(); endList(); return; }
+        if ((m = l.match(/^#{1,6}\s+(.*)$/))) { flush(); endList(); out.push('<h4>' + inline(m[1]) + '</h4>'); return; }
+        if ((m = l.match(/^[-*]\s+(.*)$/))) { flush(); if (!list) { out.push('<ul>'); list = true; } out.push('<li>' + inline(m[1]) + '</li>'); return; }
+        if ((m = l.match(/^\*\*([^*]+)\*\*$/))) { flush(); endList(); out.push('<h4>' + inline(m[1]) + '</h4>'); return; }
+        endList(); para.push(l);
+      });
+      flush(); endList();
+      return out.join('');
+    }
+    function date(iso) {
+      var d = new Date(iso);
+      function f(loc) { try { return d.toLocaleDateString(loc, { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return iso.slice(0, 10); } }
+      return '<span class="date"><span data-id>' + f('id-ID') + '</span><span data-en>' + f('en-US') + '</span></span>';
+    }
+    if (!window.oncReleases) return;
+    oncReleases(repo)
+      .then(function (rels) {
+        rels = rels.slice(0, 3);
+        if (!rels.length) return;
+        var sec = box.closest('section');
+        var html = rels.map(function (r, i) {
+          var head = '<span class="ver">' + esc(r.tag_name) + '</span>' + date(r.published_at) +
+            (i === 0 ? '<span class="badge"><span data-id>Terbaru</span><span data-en>Latest</span></span>' : '');
+          var body = '<div class="rel-body">' + md(r.body || '') + '</div>';
+          return i === 0 ? '<article class="rel"><div class="rel-head">' + head + '</div>' + body + '</article>'
+                         : '<details class="rel"><summary>' + head + '</summary>' + body + '</details>';
+        }).join('');
+        box.innerHTML = html + box.innerHTML;
+        if (sec) sec.hidden = false;   // bagian ini tersembunyi sampai datanya ada (tanpa data: tidak tampil sama sekali)
+      })
+      .catch(function () { /* releases.json belum ada/offline: bagian tetap tersembunyi */ });
+  })();
+</script>
+<!-- /onc-extras-js -->
+  <!-- onc-fab -->
+  <a class="onc-fab" href="https://overnightcoder219.github.io/" aria-label="OverNightCoder Apps: lihat semua aplikasi" title="OverNightCoder Apps">
+    <img src="https://overnightcoder219.github.io/assets/overnightcoder-logo.svg" alt="" width="34" height="34">
+    <span class="t">OverNightCoder <span data-id>Apps</span><span data-en>Apps</span></span>
+  </a>
+  <!-- /onc-fab -->
+</body>
+</html>

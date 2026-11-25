@@ -1,0 +1,7 @@
+{
+  "versionName": "1.0.0",
+  "versionCode": 1,
+  "apk": "https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.0/GGID-Track-1.0.0.apk",
+  "sha256": "a8f7fda17e95b5391fc67abe0e2d25215631b90ac76339e70188ca13652eda13",
+  "notes": "Rilis pertama GGID Track.\n\n• Live: posisi semua kendaraan di peta, status bergerak/berhenti/offline, dan lokasi ponsel Anda sendiri.\n• Devices: daftar perangkat, detail kendaraan dengan alamat, dan peta per kendaraan.\n• Dashcam: video langsung CH1/CH2 dengan suara, bicara ke pengemudi (push-to-talk), putar ulang rekaman kartu SD, klip, foto, dan snapshot alarm.\n• Alerts: notifikasi push dengan pengaturan per jenis peringatan, serta geofence.\n• Mode gelap mengikuti sistem, dan pemeriksaan pembaruan di Account → About.\n\nMasuk dengan akun dari penyedia GPS Anda. Pasang versi berikutnya di atas versi ini; data masuk tetap tersimpan."
+}
