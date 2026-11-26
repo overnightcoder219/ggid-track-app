@@ -1,7 +1,7 @@
 {
-  "versionName": "1.0.5",
-  "versionCode": 1000005,
-  "apk": "https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.5/GGID-Track-1.0.5.apk",
-  "sha256": "d824d8b8a2c223b12080734605b5ffca09b7a407a3e0e308fb8fba646baeda30",
-  "notes": "• Lama berhenti: kartu di tab Devices menampilkan durasi singkat di atas status Parked/Idle (misalnya 30H atau 25M), dan daftar kendaraan di tab Map menampilkan durasi lengkapnya (misalnya \"Parked · berhenti 30 jam 21 menit\").\n• Notifikasi push kini berfungsi. Aktifkan di Account → Notifications; jika izin ditolak, aplikasi memberi tahu cara mengaktifkannya.\n• Daftar kendaraan di tab Map lebih mudah ditarik ke atas atau ke bawah.\n• Tombol Live, Route, dan Detail kini tampil seragam, dan semua tombol video bertuliskan Live.\n• Kolom email dan kata sandi di halaman masuk kini diberi contoh isian.\n• Baris Server di Account disembunyikan karena alamat server sudah tertanam di aplikasi.\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan."
+  "versionName": "1.0.6",
+  "versionCode": 1000006,
+  "apk": "https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.6/GGID-Track-1.0.6.apk",
+  "sha256": "4b7a576fb4b41bf241e24268aae8d0ba11d9a5e9c85115424b20c4dc2303e8b8",
+  "notes": "• Recordings baru: satu garis waktu 24 jam dengan penunjuk di tengah. Geser untuk memilih waktu, cubit atau tombol − + untuk zoom. Bagian biru menandai waktu yang ada rekamannya, dan halaman langsung terbuka di file terbaru.\n• Pemutar video baru: kontrol ada di dalam layar (putar/jeda, mundur/maju 10 detik, kecepatan 0.5x–2x, layar penuh) dan bar progres menunjukkan bagian yang sudah terunduh. Di akhir file, video bisa diputar ulang tanpa kuota tambahan.\n• Daftar file rekaman sehari penuh, terbaru di atas, dan tanggal bisa dipilih langsung dari kalender.\n• Saat dashcam offline atau koneksi terputus, aplikasi menampilkan info yang jelas.\n• Peta: Google Maps kini tersedia (Account → Map), dengan lapisan Normal, Satelit, dan 3D. Warna peta bisa mengikuti HP atau dipilih selalu terang atau gelap.\n• Filter Photos lebih ringkas dalam satu baris, dan tab pintasan di halaman perangkat dihapus agar tampilan lebih lega.\n• Status perangkat diperbaiki: dashcam yang baru terputus tampil Offline, bukan Inactive.\n• Mulai versi ini, aplikasi memberi tahu saat ada versi baru ketika dibuka.\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan."
 }
