@@ -1,6 +1,17 @@
 {
   "releases": [
     {
+      "tag_name": "v1.0.6",
+      "published_at": "2026-11-26T06:02:10Z",
+      "body": "## GGID Track 1.0.6\n\n- Recordings baru: satu garis waktu 24 jam dengan penunjuk di tengah. Geser untuk memilih waktu, cubit atau tombol − + untuk zoom. Bagian biru menandai waktu yang ada rekamannya, dan halaman langsung terbuka di file terbaru.\n- Pemutar video baru: kontrol ada di dalam layar (putar/jeda, mundur/maju 10 detik, kecepatan 0.5x–2x, layar penuh) dan bar progres menunjukkan bagian yang sudah terunduh. Di akhir file, video bisa diputar ulang tanpa kuota tambahan.\n- Daftar file rekaman sehari penuh, terbaru di atas, dan tanggal bisa dipilih langsung dari kalender.\n- Saat dashcam offline atau koneksi terputus, aplikasi menampilkan info yang jelas.\n- Peta: Google Maps kini tersedia (Account → Map), dengan lapisan Normal, Satelit, dan 3D. Warna peta bisa mengikuti HP atau dipilih selalu terang atau gelap.\n- Filter Photos lebih ringkas dalam satu baris, dan tab pintasan di halaman perangkat dihapus agar tampilan lebih lega.\n- Status perangkat diperbaiki: dashcam yang baru terputus tampil Offline, bukan Inactive.\n- Mulai versi ini, aplikasi memberi tahu saat ada versi baru ketika dibuka.\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan.\n",
+      "assets": [
+        {
+          "name": "GGID-Track-1.0.6.apk",
+          "download_count": 0
+        }
+      ]
+    },
+    {
       "tag_name": "v1.0.5",
       "published_at": "2026-11-25T20:40:45Z",
       "body": "## GGID Track 1.0.5\n\n- Lama berhenti: kartu di tab Devices menampilkan durasi singkat di atas status Parked/Idle (misalnya 30H atau 25M), dan daftar kendaraan di tab Map menampilkan durasi lengkapnya (misalnya \"Parked · berhenti 30 jam 21 menit\").\n- Notifikasi push kini berfungsi. Aktifkan di Account → Notifications; jika izin ditolak, aplikasi memberi tahu cara mengaktifkannya.\n- Daftar kendaraan di tab Map lebih mudah ditarik ke atas atau ke bawah.\n- Tombol Live, Route, dan Detail kini tampil seragam, dan semua tombol video bertuliskan Live.\n- Kolom email dan kata sandi di halaman masuk kini diberi contoh isian.\n- Baris Server di Account disembunyikan karena alamat server sudah tertanam di aplikasi.\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan.\n",
@@ -25,7 +36,7 @@
     {
       "tag_name": "v1.0.3",
       "published_at": "2026-11-25T13:54:59Z",
-      "body": "## GGID Track 1.0.3\n\n- Pembaruan langsung dari aplikasi: buka Account → About → Check for Updates, lalu ketuk Update Now. Aplikasi mengunduh dan memeriksa file pembaruan sendiri, lalu membuka layar pemasangan Android. Saat pertama kali, Android meminta izin agar GGID Track boleh memasang aplikasi.\n\nVersi ini perlu dipasang manual sekali dari situs unduhan. Setelah itu, pembaruan berikutnya cukup lewat Update Now. Data masuk tetap tersimpan.\n",
+      "body": "",
       "assets": [
         {
           "name": "GGID-Track-1.0.3.apk",
