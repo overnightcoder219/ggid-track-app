@@ -1,7 +1,7 @@
 {
-  "versionName": "1.0.6",
-  "versionCode": 1000006,
-  "apk": "https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.6/GGID-Track-1.0.6.apk",
-  "sha256": "4b7a576fb4b41bf241e24268aae8d0ba11d9a5e9c85115424b20c4dc2303e8b8",
-  "notes": "• Recordings baru: satu garis waktu 24 jam dengan penunjuk di tengah. Geser untuk memilih waktu, cubit atau tombol − + untuk zoom. Bagian biru menandai waktu yang ada rekamannya, dan halaman langsung terbuka di file terbaru.\n• Pemutar video baru: kontrol ada di dalam layar (putar/jeda, mundur/maju 10 detik, kecepatan 0.5x–2x, layar penuh) dan bar progres menunjukkan bagian yang sudah terunduh. Di akhir file, video bisa diputar ulang tanpa kuota tambahan.\n• Daftar file rekaman sehari penuh, terbaru di atas, dan tanggal bisa dipilih langsung dari kalender.\n• Saat dashcam offline atau koneksi terputus, aplikasi menampilkan info yang jelas.\n• Peta: Google Maps kini tersedia (Account → Map), dengan lapisan Normal, Satelit, dan 3D. Warna peta bisa mengikuti HP atau dipilih selalu terang atau gelap.\n• Filter Photos lebih ringkas dalam satu baris, dan tab pintasan di halaman perangkat dihapus agar tampilan lebih lega.\n• Status perangkat diperbaiki: dashcam yang baru terputus tampil Offline, bukan Inactive.\n• Mulai versi ini, aplikasi memberi tahu saat ada versi baru ketika dibuka.\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan."
+  "versionName": "1.0.7",
+  "versionCode": 1000007,
+  "apk": "https://github.com/overnightcoder219/ggid-track-app/releases/download/v1.0.7/GGID-Track-1.0.7.apk",
+  "sha256": "ce651abc4d51544453ec020607624f8fd85cbd857c30039c0083d3cd6d8d8bf9",
+  "notes": "• Rekaman yang sudah pernah diputar sampai selesai kini tersimpan sementara di server. Saat dibuka lagi, video langsung diputar tanpa menunggu dashcam dan tanpa memakai kuota SIM dashcam, serta bisa dilompati dan dipercepat dengan bebas.\n• File rekaman yang tersimpan diberi tanda \"Tersimpan · tanpa kuota\" di daftar, dan memutarnya tidak meminta konfirmasi kuota.\n• Rekaman tersimpan dihapus otomatis 24 jam setelah terakhir diputar (paling banyak 5 file per dashcam).\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan."
 }
