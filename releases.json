@@ -1,13 +1,24 @@
 {
   "releases": [
     {
+      "tag_name": "v1.0.7",
+      "published_at": "2026-11-26T06:40:36Z",
+      "body": "## GGID Track 1.0.7\n\n- Rekaman yang sudah pernah diputar sampai selesai kini tersimpan sementara di server. Saat dibuka lagi, video langsung diputar tanpa menunggu dashcam dan tanpa memakai kuota SIM dashcam, serta bisa dilompati dan dipercepat dengan bebas.\n- File rekaman yang tersimpan diberi tanda \"Tersimpan · tanpa kuota\" di daftar, dan memutarnya tidak meminta konfirmasi kuota.\n- Rekaman tersimpan dihapus otomatis 24 jam setelah terakhir diputar (paling banyak 5 file per dashcam).\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan.\n",
+      "assets": [
+        {
+          "name": "GGID-Track-1.0.7.apk",
+          "download_count": 0
+        }
+      ]
+    },
+    {
       "tag_name": "v1.0.6",
       "published_at": "2026-11-26T06:02:10Z",
       "body": "## GGID Track 1.0.6\n\n- Recordings baru: satu garis waktu 24 jam dengan penunjuk di tengah. Geser untuk memilih waktu, cubit atau tombol − + untuk zoom. Bagian biru menandai waktu yang ada rekamannya, dan halaman langsung terbuka di file terbaru.\n- Pemutar video baru: kontrol ada di dalam layar (putar/jeda, mundur/maju 10 detik, kecepatan 0.5x–2x, layar penuh) dan bar progres menunjukkan bagian yang sudah terunduh. Di akhir file, video bisa diputar ulang tanpa kuota tambahan.\n- Daftar file rekaman sehari penuh, terbaru di atas, dan tanggal bisa dipilih langsung dari kalender.\n- Saat dashcam offline atau koneksi terputus, aplikasi menampilkan info yang jelas.\n- Peta: Google Maps kini tersedia (Account → Map), dengan lapisan Normal, Satelit, dan 3D. Warna peta bisa mengikuti HP atau dipilih selalu terang atau gelap.\n- Filter Photos lebih ringkas dalam satu baris, dan tab pintasan di halaman perangkat dihapus agar tampilan lebih lega.\n- Status perangkat diperbaiki: dashcam yang baru terputus tampil Offline, bukan Inactive.\n- Mulai versi ini, aplikasi memberi tahu saat ada versi baru ketika dibuka.\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan.\n",
       "assets": [
         {
           "name": "GGID-Track-1.0.6.apk",
-          "download_count": 0
+          "download_count": 4
         }
       ]
     },
@@ -25,7 +36,7 @@
     {
       "tag_name": "v1.0.4",
       "published_at": "2026-11-25T19:09:43Z",
-      "body": "## GGID Track 1.0.4\n\n- Tab Map kini menjadi beranda armada: ringkasan status di atas peta (Moving, Idle, Parked, Offline beserta jumlahnya). Ketuk salah satu untuk menampilkan kendaraan dengan status itu saja.\n- Daftar kendaraan di bawah peta: yang sedang bergerak di urutan teratas, lengkap dengan kecepatan dan kapan terakhir diperbarui. Ketuk kendaraan untuk langsung menuju lokasinya.\n- Saat satu kendaraan dipilih, tersedia tiga tombol besar: Live, Route, dan Detail.\n\nPerbarui dari Account → About → Update Now. Data masuk tetap tersimpan.\n",
+      "body": "",
       "assets": [
         {
           "name": "GGID-Track-1.0.4.apk",
